@@ -1,5 +1,5 @@
 /* 
-  modelo de callBack
+  // modelo de callBack
 
   // Model 01
   function myDisplayer(some) {
@@ -16,7 +16,7 @@
   // Aqui chama-se a função myDisplayer como Callback e assim irá.
 
   
-  // Criar um array
+  // Model 02 Criar um array
   const myNumbers = [3, 5, 7, 12, 45, -13, 0, -39, -2, -5];
 
   // Chamar função removeNegative com callback
@@ -37,7 +37,22 @@
   }
 
 
-  // Model 02
+  //  Model 03
+  function model(caminho, callback) {
+    const modelString = "MODEL";
+    callback(null, modelString);
+  }
+
+  model("arquivo.txt", (error, text) => {
+    if (error) {
+      console.log("we got a error", error)
+    } else {
+      console.log("we got the text", text)
+    }
+  })
+
+
+  // Model 04
   function obterLeitura(caminho, callback) {
     setTimeout(() => {
       const text = "text inside";
@@ -54,7 +69,7 @@
   });
 
 
-  // Model 03 - Example Commented
+  // Model 05 - Example Commented
   function moreThan(router, callback) { // assinc function for read a file.
     setTimeout(() => {
       const insideRouter = "Here some contents for you.";
